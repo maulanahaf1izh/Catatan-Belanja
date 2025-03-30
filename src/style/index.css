@@ -1,0 +1,395 @@
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+
+:root {
+  --font-heading-default: 20px;
+  --font-heading-tablet: 23px;
+  --font-heading-laptop: 26px;
+  --font-heading-laptopL: 27px;
+
+  --font-subheading-default: 16px;
+  --font-subheading-tablet: 18px;
+  --font-subheading-laptop: 20px;
+  --font-subheading-laptopL: 24px;
+
+  --font-body-default: 15px;
+  --font-body-tablet: 17px;
+  --font-body-laptop: 19px;
+  --font-body-laptopL: 22px;
+
+  --powder-blue-color: #bfd7ea;
+  --soft-peach-color: #fad4c0;
+}
+
+* {
+  box-sizing: border-box;
+  width: 100%;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Patrick Hand", cursive;
+  font-weight: normal;
+  max-width: 1440px;
+  margin: auto;
+}
+
+div.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+nav#nav.nav {
+  background-color: var(--powder-blue-color);
+  padding: 20px;
+  text-align: center;
+
+  > h1 {
+    font-weight: bolder;
+    letter-spacing: 2px;
+    font-size: var(--font-heading-default);
+  }
+}
+
+form#add-form.add-form {
+  background-color: var(--soft-peach-color);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  > h3 {
+    font-size: var(--font-subheading-default);
+  }
+
+  > div {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+
+    > select {
+      flex: 1;
+      text-align: center;
+      font-family: inherit;
+      font-size: var(--font-body-default);
+      border: 1px solid black;
+      border-radius: 10px 0 0 10px;
+    }
+
+    > select:focus {
+      outline: 3px solid var(--powder-blue-color);
+    }
+
+    > input {
+      flex: 5;
+      padding: 5px;
+      font-family: inherit;
+      font-size: var(--font-body-default);
+      border: 1px solid black;
+      border-radius: 0 10px 10px 0;
+    }
+
+    > input:focus {
+      outline: 3px solid var(--powder-blue-color);
+    }
+  }
+
+  > button {
+    font-family: inherit;
+    background-color: white;
+    border: 3px solid var(--powder-blue-color);
+    border-radius: 10px;
+    padding: 5px;
+
+    > p {
+      font-size: var(--font-body-default);
+    }
+  }
+
+  > button:active {
+    background-color: var(--powder-blue-color);
+    border: 3px solid black;
+  }
+}
+
+div#list.list {
+  overflow-y: scroll;
+  padding: 10px;
+
+  > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    > li {
+      display: flex;
+      flex-direction: row;
+      padding: 10px;
+      border: 1px solid black;
+      border-radius: 10px;
+      align-items: center;
+
+      > input {
+        width: fit-content;
+      }
+
+      > span {
+        padding: 0 10px;
+        font-size: var(--font-body-default);
+        overflow: hidden;
+      }
+
+      > button {
+        width: fit-content;
+        background-color: white;
+        border: 3px solid var(--powder-blue-color);
+        border-radius: 10px;
+        aspect-ratio: calc(1 / 1);
+
+        > p {
+          font-size: var(--font-body-default);
+        }
+      }
+
+      > button:active {
+        background-color: var(--powder-blue-color);
+        border: 3px solid black;
+      }
+    }
+  }
+}
+
+div#actions.actions {
+  background-color: var(--soft-peach-color);
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+
+  > select {
+    font-family: inherit;
+    font-size: var(--font-body-default);
+    border: 1px solid black;
+    border-radius: 10px 0 0 10px;
+  }
+
+  > select:focus {
+    outline: 3px solid var(--powder-blue-color);
+  }
+
+  > button {
+    background-color: white;
+    font-family: inherit;
+    border: 1px solid black;
+    border-radius: 0 10px 10px 0;
+
+    > p {
+      font-size: var(--font-body-default);
+    }
+  }
+}
+
+footer#stats.stats {
+  background-color: var(--powder-blue-color);
+  padding: 20px 10px;
+
+  > p {
+    text-align: center;
+    font-weight: bolder;
+    font-size: var(--font-body-default);
+    letter-spacing: 2px;
+    line-height: 1.2;
+  }
+}
+
+@media (min-width: 768px) {
+  nav#nav.nav {
+    > h1 {
+      font-size: var(--font-heading-tablet);
+    }
+  }
+
+  form#add-form.add-form {
+    > h3 {
+      font-size: var(--font-subheading-tablet);
+    }
+
+    > div {
+      > select {
+        font-size: var(--font-body-tablet);
+      }
+
+      > input {
+        font-size: var(--font-body-tablet);
+      }
+    }
+
+    > button {
+      > p {
+        font-size: var(--font-body-tablet);
+      }
+    }
+  }
+
+  div#list.list {
+    > ul {
+      > li {
+        > span {
+          font-size: var(--font-body-tablet);
+        }
+
+        > button {
+          > p {
+            font-size: var(--font-body-tablet);
+          }
+        }
+      }
+    }
+  }
+
+  div#actions.actions {
+    > select {
+      font-size: var(--font-body-tablet);
+    }
+
+    > button {
+      > p {
+        font-size: var(--font-body-tablet);
+      }
+    }
+  }
+
+  footer#stats.stats {
+    > p {
+      font-size: var(--font-body-tablet);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  nav#nav.nav {
+    > h1 {
+      font-size: var(--font-heading-laptop);
+    }
+  }
+
+  form#add-form.add-form {
+    > h3 {
+      font-size: var(--font-subheading-laptop);
+    }
+
+    > div {
+      > select {
+        font-size: var(--font-body-laptop);
+      }
+
+      > input {
+        font-size: var(--font-body-laptop);
+      }
+    }
+
+    > button {
+      > p {
+        font-size: var(--font-body-laptop);
+      }
+    }
+  }
+
+  div#list.list {
+    > ul {
+      > li {
+        > span {
+          font-size: var(--font-body-laptop);
+        }
+
+        > button {
+          > p {
+            font-size: var(--font-body-laptop);
+          }
+        }
+      }
+    }
+  }
+
+  div#actions.actions {
+    > select {
+      font-size: var(--font-body-laptop);
+    }
+
+    > button {
+      > p {
+        font-size: var(--font-body-laptop);
+      }
+    }
+  }
+
+  footer#stats.stats {
+    > p {
+      font-size: var(--font-body-laptop);
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  nav#nav.nav {
+    > h1 {
+      font-size: var(--font-heading-laptopL);
+    }
+  }
+
+  form#add-form.add-form {
+    > h3 {
+      font-size: var(--font-subheading-laptopL);
+    }
+
+    > div {
+      > select {
+        font-size: var(--font-body-laptopL);
+      }
+
+      > input {
+        font-size: var(--font-body-laptopL);
+      }
+    }
+
+    > button {
+      > p {
+        font-size: var(--font-body-laptopL);
+      }
+    }
+  }
+
+  div#list.list {
+    > ul {
+      > li {
+        > span {
+          font-size: var(--font-body-laptopL);
+        }
+
+        > button {
+          > p {
+            font-size: var(--font-body-laptopL);
+          }
+        }
+      }
+    }
+  }
+
+  div#actions.actions {
+    > select {
+      font-size: var(--font-body-laptopL);
+    }
+
+    > button {
+      > p {
+        font-size: var(--font-body-laptopL);
+      }
+    }
+  }
+
+  footer#stats.stats {
+    > p {
+      font-size: var(--font-body-laptopL);
+    }
+  }
+}
